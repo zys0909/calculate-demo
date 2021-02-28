@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val m7: TextView by lazy { findViewById(R.id.m7) }
     private val m8: TextView by lazy { findViewById(R.id.m8) }
     private val tvResult: TextView by lazy { findViewById(R.id.tv_result) }
+    private val tvMerits: TextView by lazy { findViewById(R.id.tv_merits) }
 
     private val p1: EditText by lazy { findViewById(R.id.p1) }
     private val p2: EditText by lazy { findViewById(R.id.p2) }
@@ -68,8 +69,11 @@ class MainActivity : AppCompatActivity() {
             sb.append("＋").append(it.format)
             pr += it;
         }
+        if (mr > 1f) {
+            tvMerits.text = mr.format
+        }
         if (sb.isNotEmpty()) {
-            sb.append("＝").append(mr + pr);
+            sb.append("＝").append((mr + pr).format);
             tvResult.text = sb.toString()
         }
     }
