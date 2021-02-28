@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="SpUsage,HardcodedText,DisableBaselineAlignment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:context=".ui.calculate.CalculateActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="利用率" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m1"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="投诉灭火" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m2"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="产能" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m3"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="表扬" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m4"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="满意度" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m5"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="轻收" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m6"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="销售" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m7"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="基数" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m8"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="底薪" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p1"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="佣金" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p2"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="餐补" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p3"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="优秀奖" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p4"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:maxLines="1"
+                    android:text="小能手排名奖" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p5"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="轻收佣金" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p6"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#EEEEEE"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="加班费" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/p7"
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="#EEEEEE"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/calculate_tip_style"
+                    android:text="" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/calculate_edit_style"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:textSize="14dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:background="#DD1C07"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="onclick"
+            android:text="计算"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+</LinearLayout>
