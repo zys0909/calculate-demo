@@ -373,7 +373,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="效能类" />
+                    android:text="餐补" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/m16"
@@ -389,7 +389,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="效能类" />
+                    android:text="加班" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/m19"
