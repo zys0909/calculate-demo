@@ -8,14 +8,27 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
+import com.tencent.mmkv.MMKV
 import java.math.RoundingMode
 import java.text.NumberFormat
 
-val TextView.num: Float
-    get() = when {
-        text.isNotEmpty() -> text.toString().toFloat()
-        else -> 0f
+fun TextView.init() {
+    val key = "key_" + this.id.toString()
+    if (MMKV.defaultMMKV()?.containsKey(key) == true) {
+        text = MMKV.defaultMMKV()?.decodeFloat(key)?.format
     }
+}
+
+fun TextView.toFloat(defValue: Int = 0): Float {
+    val value = try {
+        text.toString().toFloat()
+    } catch (e: Exception) {
+        defValue.toFloat()
+    }
+    MMKV.defaultMMKV()?.encode("key_" + this.id.toString(), value)
+    return value
+}
+
 val Float.format: String
     get() = NumberFormat.getInstance().apply {
         roundingMode = RoundingMode.HALF_UP
@@ -23,12 +36,6 @@ val Float.format: String
         isGroupingUsed = false
     }.format(this)
 
-fun MutableList<Float>.check(textView: TextView) {
-    val num = textView.num
-    if (num > 0f) {
-        add(num)
-    }
-}
 
 /**
  * 描述:
