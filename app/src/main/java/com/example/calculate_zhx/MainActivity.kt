@@ -79,13 +79,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateResult() {
         // p1 = m1 + m2
-        val tp1 = plus(m1, m2)
+        val tp1 = plus(0f, m1, m2)
         p1.text = tp1.first
         // p2 = m3 + m4 + m5
-        val tp2 = plus(m3, m4, m5)
+        val tp2 = plus(0f, m3, m4, m5)
         p2.text = tp2.first
         // p3 = m6 + m7
-        val tp3 = plus(m6, m7)
+        val tp3 = plus(0f, m6, m7)
         p3.text = tp3.first
         // p4 = p1 * m8 * m9 * m10
         val tp4 = product(tp1.second, m8, m9, m10)
@@ -109,23 +109,18 @@ class MainActivity : AppCompatActivity() {
         return s + "=" + result.format to result
     }
 
-    private fun plus(vararg arg: TextView): Pair<String, Float> {
-        val newArg = arg.map { it.toFloat() }
-        val s = newArg.joinToString("+") { it.format }
-        val result = newArg.reduce { acc, i -> acc + i }
-        return s + "=" + result.format to result
-    }
-
     private fun plus(p: Float, vararg arg: TextView): Pair<String, Float> {
         val newArg = arg.map { it.toFloat() }.toMutableList()
-        newArg.add(0, p)
+        if (p != 0f) {
+            newArg.add(0, p)
+        }
         val s = newArg.joinToString("+") { it.format }
         val result = newArg.reduce { acc, i -> acc + i }
         return s + "=" + result.format to result
     }
 
     private fun product(p: Float, vararg arg: TextView): Pair<String, Float> {
-        val newArg = arg.map { it.toFloat(1) }.toMutableList()
+        val newArg = arg.map { it.toFloat(1) }.filter { it != 0f }.toMutableList()
         if (p != 0f) {
             newArg.add(0, p)
         }
