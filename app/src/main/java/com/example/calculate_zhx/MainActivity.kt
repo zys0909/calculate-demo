@@ -1,9 +1,9 @@
 package com.example.calculate_zhx
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import com.tencent.mmkv.MMKV
 
@@ -69,37 +69,69 @@ class MainActivity : AppCompatActivity() {
         m18.init()
         m19.init()
         m20.init()
-        onclick(m1)
+        calculateResult()
     }
 
 
     fun onclick(view: View) {
-        // p1 = m1 + m2
-        val tp1 = m1.toFloat() + m2.toFloat()
-        p1.setText(tp1.format)
-        // p2 = m3 + m4 + m5
-        val tp2 = m3.toFloat() + m4.toFloat() + m5.toFloat()
-        p2.setText(tp2.format)
-        // p3 = m6 + m7
-        val tp3 = m6.toFloat() + m7.toFloat()
-        p3.setText(tp3.format)
-        // p4 = m8 * m9 * m10 * p1
-        val tp4 = m8.toFloat(1) * m9.toFloat(1) * m10.toFloat(1) * tp1
-        p4.setText(tp4.format)
-        // p5 = m11 * m12 * p2
-        val tp5 = m11.toFloat(1) * m12.toFloat(1) * tp2
-        p5.setText(tp5.format)
-        // p6 = m13 * m14 * p3
-        val tp6 = m13.toFloat(1) * m14.toFloat(1) * tp3
-        p6.setText(tp6.format)
-        // p7 = p4 + p5 + p6
-        val tp7 = tp4 + tp5 + tp6
-        p7.setText(tp7.format)
-        // p8 = p7 + m15 + m16 + m17 + m18 + m19 + m20
-        val tp8 =
-            tp7 + m15.toFloat() + m16.toFloat() + m17.toFloat() + m18.toFloat() + m19.toFloat() + m20.toFloat()
-        p8.setText(tp8.format)
+        calculateResult()
     }
 
+    private fun calculateResult() {
+        // p1 = m1 + m2
+        val tp1 = plus(m1, m2)
+        p1.text = tp1.first
+        // p2 = m3 + m4 + m5
+        val tp2 = plus(m3, m4, m5)
+        p2.text = tp2.first
+        // p3 = m6 + m7
+        val tp3 = plus(m6, m7)
+        p3.text = tp3.first
+        // p4 = p1 * m8 * m9 * m10
+        val tp4 = product(tp1.second, m8, m9, m10)
+        p4.text = tp4.first
+        // p5 = p2 * m11 * m12
+        val tp5 = product(tp2.second, m11, m12)
+        p5.text = tp5.first
+        // p6 = p3 * m13 * m14
+        val tp6 = product(tp3.second, m13, m14)
+        p6.text = tp6.first
+        // p7 = p4 + p5 + p6
+        val tp7 = plus(tp4.second, tp5.second, tp6.second)
+        p7.text = tp7.first
+        // p8 = p7 + m15 + m16 + m17 + m18 + m19 + m20
+        p8.text = plus(tp7.second, m15, m16, m17, m18, m19, m20).first
+    }
+
+    private fun plus(vararg arg: Float): Pair<String, Float> {
+        val s = arg.joinToString("+") { it.format }
+        val result = arg.reduce { acc, i -> acc + i }
+        return s + "=" + result.format to result
+    }
+
+    private fun plus(vararg arg: TextView): Pair<String, Float> {
+        val newArg = arg.map { it.toFloat() }
+        val s = newArg.joinToString("+") { it.format }
+        val result = newArg.reduce { acc, i -> acc + i }
+        return s + "=" + result.format to result
+    }
+
+    private fun plus(p: Float, vararg arg: TextView): Pair<String, Float> {
+        val newArg = arg.map { it.toFloat() }.toMutableList()
+        newArg.add(0, p)
+        val s = newArg.joinToString("+") { it.format }
+        val result = newArg.reduce { acc, i -> acc + i }
+        return s + "=" + result.format to result
+    }
+
+    private fun product(p: Float, vararg arg: TextView): Pair<String, Float> {
+        val newArg = arg.map { it.toFloat(1) }.toMutableList()
+        if (p != 0f) {
+            newArg.add(0, p)
+        }
+        val s = newArg.joinToString("x") { it.format }
+        val result = newArg.reduce { acc, i -> acc * i }
+        return s + "=" + result.format to result
+    }
 }
 

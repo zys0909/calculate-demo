@@ -118,14 +118,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="绩效" />
+                    android:text="底薪" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/p7"
-                    style="@style/text_style"
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m15"
+                    style="@style/edit_style"
                     android:layout_weight="2"
-                    tools:text="6110" />
-
+                    android:text="15" />
             </LinearLayout>
 
             <LinearLayout
@@ -135,13 +134,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="佣金" />
+                    android:text="优秀奖" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/m17"
+                    android:id="@+id/m18"
                     style="@style/edit_style"
                     android:layout_weight="2"
-                    android:text="17" />
+                    android:text="18" />
             </LinearLayout>
 
         </LinearLayout>
@@ -252,13 +251,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="底薪" />
+                    android:text="餐补" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/m15"
+                    android:id="@+id/m16"
                     style="@style/edit_style"
                     android:layout_weight="2"
-                    android:text="15" />
+                    android:text="16" />
             </LinearLayout>
 
             <LinearLayout
@@ -268,13 +267,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="优秀奖" />
+                    android:text="加班" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/m18"
+                    android:id="@+id/m19"
                     style="@style/edit_style"
                     android:layout_weight="2"
-                    android:text="18" />
+                    android:text="19" />
             </LinearLayout>
         </LinearLayout>
 
@@ -373,13 +372,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="餐补" />
+                    android:text="佣金" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/m16"
+                    android:id="@+id/m17"
                     style="@style/edit_style"
                     android:layout_weight="2"
-                    android:text="16" />
+                    android:text="17" />
             </LinearLayout>
 
             <LinearLayout
@@ -389,38 +388,46 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/text_style"
-                    android:text="加班" />
+                    android:text="其它" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/m19"
+                    android:id="@+id/m20"
                     style="@style/edit_style"
                     android:layout_weight="2"
-                    android:text="19" />
+                    android:text="20" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/text_style"
-            android:text="其它" />
+            android:layout_weight="1"
+            android:text="绩效" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/m20"
-            style="@style/edit_style"
-            android:layout_weight="2"
-            android:text="20" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/p7"
+            style="@style/text_style"
+            android:layout_weight="5"
+            tools:text="6110" />
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/text_style"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:background="@drawable/bg_text_calculate"
             android:maxLines="2"
             android:onClick="onclick"
             android:text="点击汇总" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/p8"
